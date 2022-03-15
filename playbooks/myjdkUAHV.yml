@@ -8,6 +8,12 @@
      state: present
     when: ansible_os_family == "Debian"
 
+  - name: start the apache2 service
+    service:
+     name: "{{myjavaonubuntu}}"
+     state: started
+    when: ansible_os_family == "Debian"
+
   - name: install jdk8 on amazonlinux2 node2
     yum:
      name: "{{myjavaonamazonos}}"
